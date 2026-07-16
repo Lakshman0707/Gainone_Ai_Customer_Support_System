@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin - All Tickets</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+
+        if (!localStorage.getItem("admin_token")) {
+
+            window.location.href = "admin_login.html";
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <h1>All Customer Tickets</h1>
+
+    <button onclick="window.location='admin_dashboard.html'">
+
+        ← Back to Dashboard
+
+    </button>
+
+    <button onclick="adminLogout()">
+
+        Logout
+
+    </button>
+
+    <br><br>
+
+    <table border="1" width="100%" cellpadding="10">
+
+        <thead>
+
+            <tr>
+
+                <th>Ticket ID</th>
+                <th>Customer</th>
+                <th>Email</th>
+                <th>Issue</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Assigned Agent</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="adminTicketTable">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

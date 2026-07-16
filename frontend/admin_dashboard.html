@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GainOne Admin Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+
+        if (!localStorage.getItem("admin_token")) {
+
+            window.location.href = "admin_login.html";
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <h1>GainOne Admin Dashboard</h1>
+
+    <h3>
+
+        Welcome,
+        <span id="adminName"></span>
+
+    </h3>
+
+    <button onclick="adminLogout()">
+
+        Logout
+
+    </button>
+
+    <hr>
+
+    <!-- Dashboard Cards -->
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>Total Customers</h3>
+
+            <h1 id="adminTotalUsers">0</h1>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Total Chats</h3>
+
+            <h1 id="adminTotalChats">0</h1>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Total Tickets</h3>
+
+            <h1 id="adminTotalTickets">0</h1>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Total Documents</h3>
+
+            <h1 id="adminTotalDocuments">0</h1>
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <h2>Registered Customers</h2>
+
+    <table
+        border="1"
+        cellpadding="10"
+        cellspacing="0"
+        width="100%">
+
+        <thead>
+
+        <tr>
+
+            <th>ID</th>
+
+            <th>Name</th>
+
+            <th>Email</th>
+
+            <th>Total Chats</th>
+
+            <th>Total Tickets</th>
+
+            <th>History</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody id="customerTable">
+
+        </tbody>
+
+    </table>
+
+    <br>
+
+    <button onclick="window.location.href='tickets_admin.html'">
+
+        View All Tickets
+
+    </button>
+
+</div>
+
+<script>
+
+document.getElementById("adminName").innerText =
+localStorage.getItem("admin_name");
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
